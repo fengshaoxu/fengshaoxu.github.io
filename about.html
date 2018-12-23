@@ -71,6 +71,9 @@
 		text-align:center;
 		font-size:30px;
 	}
+	.about-content{
+		padding-top:200px;
+	}
 	.about-item-title{
 		font-size:72px;
 		text-align:center;
@@ -104,8 +107,8 @@
 		align-items:flex-end;
 	}
 	.about-item-title.me{
-		margin-top:200px;
 		font-size:80px;
+		margin-bottom:10px;
 	}
 	.about-item-detail{
 		margin:0 auto;
@@ -135,14 +138,17 @@
 	<section class="content">
 		<div class="about-content">
 			<!-- <div class="about-my-img"><img src="./img/self.jpeg"/></div> -->
-			<div class="about-item-title me">我</div>
-			<div class="about-item-title c">我和设计</div>
+			<div class="about-item-title c me">我</div>
+			<div class="about-item-detail" style="width:400px">
+					
+			</div>
+			<div class="about-item-title c" style="margin-top:-15px;">我和设计</div>
 			<div class="about-item-detail" style="width:800px">
 					
 			</div>
 			<div class="about-item-title e">I & DESIGN</div>
 			<div class="about-item-title c motor-title">摩托车和生活</div>
-			<div class="about-item-detail" style="width:760px">
+			<div class="about-item-detail" style="width:800px">
 				<div class="about-motor">
 						<div class="motor-container">
 								<div class="bike-body">
@@ -507,10 +513,6 @@
 			<div class="about-detail">
 					<p>我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。</p>
 				</div>
-			
-			<div class="about-item-con">
-			</div>
-			
 		</div>
 	</section>
 	<div class="guanyu"></div>
@@ -522,17 +524,7 @@
 		})
 		$(".about-item-title.e").click(function(){
 			$(".about-item-detail").css({"height":"0px"});
-		})
-		$(".info-yuncheng").mouseout(function(){
-			$(".guanyu").css({"width":"0px"})
-		})
-		$(".info-simp").mouseover(function(){
-			$(".info-simp-right").css({"width":"200px"})
-		})
-		$(".info-simp").mouseout(function(){
-			$(".info-simp-right").css({"width":"0px"})
-		})
-		
+		})		
 	</script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
