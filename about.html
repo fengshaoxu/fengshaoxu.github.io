@@ -110,12 +110,16 @@
 		font-size:80px;
 		margin-bottom:10px;
 	}
+	.about-item-title.cur{
+		color:#cb4042;
+		transition: color 0.3s linear;
+	}
 	.about-item-detail{
 		margin:0 auto;
 		margin-top:-20px;
 		height:0px;
 		overflow:hidden;
-		transition: height 2s linear;
+		transition: height 1s cubic-bezier(0.87,0.05,0.29,1.01);
 		border:1px solid rgba(255,255,255,0.3);
 		background:rgba(255,255,255,0.2);
 		border-radius: 5px;
@@ -521,6 +525,21 @@
 		$(".about-item-title.c").click(function(){
 			$(".about-item-detail").css({"height":"0px"});
 			$(this).next().css({"height":"500px"});
+			$(".about-item-title").removeClass("cur");
+			$(this).addClass("cur").next().next().addClass("cur");
+
+		})
+		$(".about-item-title.c").hover(function(){
+			$(".about-item-title").removeClass("cur");
+			$(this).addClass("cur").next().next().addClass("cur");
+		},function(){
+			$(".about-item-title").removeClass("cur");
+		})
+		$(".about-item-title.e").hover(function(){
+			$(".about-item-title").removeClass("cur");
+			$(this).addClass("cur").prev().prev().addClass("cur");
+		},function(){
+			$(".about-item-title").removeClass("cur");
 		})
 		$(".about-item-title.e").click(function(){
 			$(".about-item-detail").css({"height":"0px"});
