@@ -46,3 +46,43 @@ a:hover,a:focus{color:#74777b;}
         font-size:1.2em;
     }
 }
+.logo-con{
+	position:absolute;
+	left:20px;
+	top:20px;
+	z-index:9999;
+	line-height:50px;
+}
+.logo-con img{
+	width:50px;
+	vertical-align: middle;
+}
+.logo-con b{
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size:38px;
+	color:#FBFBF6;
+	vertical-align: middle;
+	margin-left:8px;
+}
+.menu{
+	position:absolute;
+	right:20px;
+	top:28px;
+	z-index:9999;
+}
+.menu li{
+	position:relative;
+	width:100px;
+	text-align:center;
+	float: left;
+	list-style: none;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.menu li a{
+	color:#FBFBF6;
+	cursor: pointer;
+}
+.menu li a:hover{
+	color:#000;
+}
