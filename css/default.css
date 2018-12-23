@@ -24,28 +24,6 @@ body{
 }
 a{color: #2fa0ec;text-decoration: none;outline: none;}
 a:hover,a:focus{color:#74777b;}
-
-@media screen and (max-width: 50em) {
-	.htmleaf-header {
-		padding: 3em 10% 4em;
-	}
-	.htmleaf-header h1 {
-        font-size:2em;
-    }
-}
-
-
-@media screen and (max-width: 40em) {
-	.htmleaf-header h1 {
-		font-size: 1.5em;
-	}
-}
-
-@media screen and (max-width: 30em) {
-    .htmleaf-header h1 {
-        font-size:1.2em;
-    }
-}
 .logo-con{
 	position:absolute;
 	left:20px;
@@ -64,12 +42,6 @@ a:hover,a:focus{color:#74777b;}
 	vertical-align: middle;
 	margin-left:8px;
 }
-.menu{
-	position:absolute;
-	right:20px;
-	top:28px;
-	z-index:9999;
-}
 .menu li{
 	position:relative;
 	width:100px;
@@ -78,11 +50,33 @@ a:hover,a:focus{color:#74777b;}
 	list-style: none;
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
-
+.menu{
+	position:absolute;
+	right:20px;
+	top:28px;
+	z-index:9999;
+}
 .menu li a{
 	color:#FBFBF6;
 	cursor: pointer;
 }
 .menu li a:hover{
 	color:#000;
+}
+.menu.home li a:hover{
+	color:rgb(125 185 222);
+}
+@media screen and (max-width: 640px) {
+	.logo-con{
+		left:5px;
+	}
+	.menu li{
+		width:60px;
+	}
+	.menu{
+		position:absolute;
+		right:0px;
+		top:25px;
+		z-index:9999;
+	}
 }

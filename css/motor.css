@@ -1,15 +1,13 @@
 .about-motor{
-  margin:60px auto;
-  margin-bottom:0px;
+  margin:0px auto;
+  margin-bottom:60px;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content:center;
 }
 .motor-container {
-  margin-left:230px;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position:relative;
   width: 220px;
   height: 125px;
   color: black;
