@@ -163,7 +163,7 @@
 				<p style="margin:20px 30px;">我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。</p>
 			</div>
 			<div class="about-item-title c design">我和设计</div>
-			<div class="about-item-detail" style="width:80%;">
+			<div class="about-item-detail" style="width:60%;">
 					
 			</div>
 			<div class="about-item-title e">I & DESIGN</div>
@@ -205,7 +205,7 @@
 			</div>
 			<div class="about-item-title e">MOTORCYCLE & LIFE</div>
 			<div class="about-item-title c">辛普森一家</div>
-			<div class="about-item-detail" style="width:80%;">
+			<div class="about-item-detail" style="width:70%;">
 				<div class="info-simp-con">
 					<div class="bart">
 						<div class="head">
@@ -546,7 +546,11 @@
 		})
 		$(".about-item-title.c").hover(function(){
 			$(".about-item-title").removeClass("cur");
-			$(this).addClass("cur").next().next().addClass("cur");
+			if($(this).hasClass("me")){
+				$(this).addClass("cur")
+			}else{
+				$(this).addClass("cur").next().next().addClass("cur");
+			}
 		},function(){
 			$(".about-item-title").removeClass("cur");
 		})
