@@ -112,7 +112,6 @@
 	}
 	.about-item-title.cur{
 		color:#cb4042;
-		transition: color 0.3s linear;
 	}
 	.about-item-detail{
 		margin:0 auto;
@@ -123,6 +122,16 @@
 		border:1px solid rgba(255,255,255,0.3);
 		background:rgba(255,255,255,0.2);
 		border-radius: 5px;
+	}
+	.about-item-detail>p{
+		margin:20px 30px;
+		line-height:30px;
+	}
+	.about-detail-text{
+		margin:20px 30px;
+	}
+	.about-detail-text p{
+		line-height:30px;
 	}	
 	</style>
 	<!--[if IE]>
@@ -144,7 +153,7 @@
 			<!-- <div class="about-my-img"><img src="./img/self.jpeg"/></div> -->
 			<div class="about-item-title c me">我</div>
 			<div class="about-item-detail" style="width:400px">
-					
+				<p style="margin:20px 30px;">我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。</p>
 			</div>
 			<div class="about-item-title c" style="margin-top:-15px;">我和设计</div>
 			<div class="about-item-detail" style="width:800px">
@@ -180,6 +189,11 @@
 								<div class="tire"></div>
 								<div class="smoke"></div>
 						</div>
+				</div>
+				<div class="about-detail-text">
+					<p>我从小就喜欢摩托车，梦想能有一辆自己的摩托车。工作之后买了自己的第一个摩托车，是一个国产的150ML车，开始了自己的摩托车生涯。后来慢慢地不喜欢了，更迷恋美式巡航的样子，可苦于美式巡航大都是哈雷和印第安，真的是割肾也买不起。后来就买了外观类似的一个太子车GZ150，这是陪伴我时间最长的一部摩托车。我骑着它跑了很多地方，结识了很多骑摩托车的朋友。每当骑车出了城市，你会感觉自己仿佛置身在风中，这是汽车比拟不了的。没有怎么开过车，但是应该差很多。骑摩托车虽然被大家叫做肉包铁，相对于汽车更危险的同时也体验着风一般的自由。</p>
+					<p>目前为止，还没有骑车去过太多地方。希望能努力挣钱，买一辆印第安，我最喜欢的一款车，能够开着它去丈量每一寸土地！</p>
+					<p>我想往后余生都离不开它了。</p>
 				</div>
 			</div>
 			<div class="about-item-title e">MOTORCYCLE & LIFE</div>
@@ -514,9 +528,6 @@
 				</div>
 			</div>
 			<div class="about-item-title e">THE SIMPONS</div>
-			<div class="about-detail">
-					<p>我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。我是冯绍绪，目前就职北京一家云安全公司，是一个WEB前端工程师。</p>
-				</div>
 		</div>
 	</section>
 	<div class="guanyu"></div>
@@ -524,10 +535,8 @@
 	<script>
 		$(".about-item-title.c").click(function(){
 			$(".about-item-detail").css({"height":"0px"});
-			$(this).next().css({"height":"500px"});
+			$(this).next().css({"height":"600px"});
 			$(".about-item-title").removeClass("cur");
-			$(this).addClass("cur").next().next().addClass("cur");
-
 		})
 		$(".about-item-title.c").hover(function(){
 			$(".about-item-title").removeClass("cur");
