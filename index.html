@@ -48,6 +48,30 @@
 		justify-content:center;
 		align-items: center;
 	}
+	.photo-content{
+		width:800px;
+	}
+	.photo-item{
+		width:400px;
+		height:300px;
+		display: inline-block;
+		float:left;
+		background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	}
+	.photo-item.one{
+		background-image:url(./img/self1.jpg);
+	}
+	.photo-item.two{
+		background-image:url(./img/self2.jpg);
+	}
+	.photo-item.three{
+		background-image:url(./img/self3.jpg);
+	}
+	.photo-item.four{
+		background-image:url(./img/self4.jpg);
+	}
 	</style>
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
@@ -64,7 +88,12 @@
 		<li><a>BLOG</a></li>
 	</ul>
 	<section class="content">
-		
+		<div class="photo-content">
+			<div class="photo-item one"></div>
+			<div class="photo-item two"></div>
+			<div class="photo-item three"></div>
+			<div class="photo-item four"></div>
+		</div>	
 	</section>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script>
