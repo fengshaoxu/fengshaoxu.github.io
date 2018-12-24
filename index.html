@@ -201,6 +201,9 @@
 					$(".inner").addClass("shake");
 					setTimeout(function(){
 						$(".logo-circle-box").find(".text").css("margin-left","20px")
+						setTimeout(function(){
+							$(".loading").fadeOut();
+						},500)
 					},300)
 				},300)
 			},1000)
