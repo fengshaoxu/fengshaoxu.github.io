@@ -69,14 +69,16 @@ a:hover,a:focus{color:#74777b;}
 @media screen and (max-width: 640px) {
 	.logo-con{
 		left:5px;
+		top:5px;
 	}
 	.menu li{
-		width:60px;
+		width:auto;
+		margin-right:8px;
 	}
 	.menu{
 		position:absolute;
 		right:0px;
-		top:25px;
+		top:10px;
 		z-index:9999;
 	}
 }
