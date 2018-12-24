@@ -28,7 +28,7 @@ a:hover,a:focus{color:#74777b;}
 	position:absolute;
 	left:20px;
 	top:20px;
-	z-index:9999;
+	z-index:1;
 	line-height:50px;
 }
 .logo-con img{
@@ -54,7 +54,7 @@ a:hover,a:focus{color:#74777b;}
 	position:absolute;
 	right:20px;
 	top:28px;
-	z-index:9999;
+	z-index:1;
 }
 .menu li a{
 	color:#FBFBF6;
