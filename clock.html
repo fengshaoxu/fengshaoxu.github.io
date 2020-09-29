@@ -24,6 +24,7 @@
     .clock span{
       display: table-cell;
       vertical-align:middle;
+      font-weight:700;
     }
   </style>
   <!--[if IE]>
@@ -32,8 +33,28 @@
 </head>
 <body>
   <div class="clock">
-    <span>11:34</span>
+    <span id="clock">11:34</span>
   </div>
 </body>
+<script>
+  function display_time() {
+      var now = new Date();
+      var hh = now.getHours();
+      var mm = now.getMinutes();
+      var ss = now.getSeconds();
+      hh = check(hh);
+      mm = check(mm);
+      ss = check(ss);
+      document.getElementById("clock").innerHTML = hh + ":" + mm;
+    }
 
+    function check(a) {
+      if (a < 10) return "0" + a;
+      else return a;
+    }
+
+    window.onload = function () {
+      setInterval(display_time, 500);
+    }
+</script>
 </html>
