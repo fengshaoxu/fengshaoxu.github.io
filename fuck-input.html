@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>作死输入框</title>
+	<meta name="description" content="冯绍绪shaoxuu的个人网站，风不扬，千层浪，前端工程师">
+	<meta name="keywords" content="冯绍绪，风不扬, shaoxuu，前端工程师，个人网站">
+	<meta name="author" content="shaoxuu">
+	<meta name="apple-mobile-web-app-title" content="shaoxuu">
+	<meta property="og:title" content="冯绍绪-风不扬-shaoxuu-首页">
+	<meta property="og:type" content="article">
+	<meta property="og:description" content="冯绍绪shaoxuu的个人网站，风不扬，千层浪，前端工程师">
+	<meta property="og:url" content="http://shaoxuu.com/">
+	<meta property="og:site_name" content="shaoxuu">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		html{
+			height:100%;			
+		}
+		body{
+			width:100%;
+			position:relative;
+			height: 100%;
+			background:#f596aa;
+			justify-content:center;
+    	display:flex;
+			align-items: center;
+			transition: all 0.5s linear;
+		}
+		.fuck-box{
+			width:500px;
+			height:120px;
+		}
+		.fuck-input input{
+			margin:0 auto;
+			width:500px;
+			height:60px;
+			border:1px solid #fff;
+			background:rgba(0,0,0,0.3);
+			border-radius: 5px;
+			font-size:36px;
+			color:#fff;
+		}
+		.fuck-box .title{
+			color:#fff;
+			text-align:center;
+			margin-bottom:40px;
+		}
+		.fuck-submit{
+			text-align: center;
+			margin-top:40px;
+		}
+		.submit-btn{
+			width:100px;
+			height:40px;
+			background: #fff;
+			border-radius: 5px;
+		}
+		.change-btn{
+			width:100px;
+			height:40px;
+			background: #fff;
+			border-radius: 5px;
+			margin-right:30px;
+		}
+		.fuck-message{
+			width:100%;
+			height:100%;
+			background: rgba(0,0,0,0.5);
+			position: absolute;
+			top:0px;
+			left:0px;
+			justify-content:center;
+    	display:flex;
+			align-items: center;
+		}
+		.fuck-message-inner{
+			width:100%;
+		}
+		.fu-img{
+			width:100%;
+			margin:0 auto;
+			text-align: center;
+		}
+		.fu-img img{
+			width:40%;
+			min-width:550px;
+			border-radius: 5px;
+		}
+		.sorry-btn{
+			width:150px;
+			height:60px;
+			background: #fff;
+			border-radius: 5px;
+			margin-top:20px;
+		}
+		.sorry-box{
+			width:100%;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="fuck-box">
+			<p class="title">{{curZuosiType.title}}</p>
+			<div class="fuck-input">
+				<input class="" type="text"/>
+			</div>
+			<p class="fuck-submit">
+				<button class="change-btn" @click="changeType()">换个别的</button>
+				<button class="submit-btn" @click="fuckSubmit()">写好了</button>
+			</p>
+		</div>
+		<div class="fuck-message animated fadeIn" v-show="angryStatus">
+			<div class="fuck-message-inner">
+				<div class="fu-img">
+					<img v-bind:src="curFuckUrl"/>
+				</div>
+				<p class="sorry-box"><button class="sorry-btn" @click="sorry()">我错了({{dangerTime}})</button></p>
+			</div>
+		</div>
+	</div>	
+</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello Vue!',
+				zuosiList:[
+					{type:"phone",title:"随便输入一个手机号",bg:"#f596aa"},
+					{type:"email",title:"瞎写一个邮箱",bg:"#336774"},
+					{type:"fuck",title:"写点汉字",bg:"#5DAC81"},
+					{type:"english",title:"写点英语",bg:"#81C7D4"},
+					{type:"number",title:"写点数字",bg:"#9B90C2"},
+				],
+				curZuosiType:{type:"phone",title:"随便输入一个手机号"},
+				angryStatus:false,
+				curFuckUrl:"./img/sorry/mobile-1.jpg",
+				fuckImgList:{
+					mobile:[
+						{type:"length",url:"./img/sorry/mobile-1.jpg"},
+						{type:"other",url:"./img/sorry/mobile-2.jpg"},
+						{type:"chinese",url:"./img/sorry/error.gif"},
+					]
+				},
+				dangerList:[
+					{url:"./img/danger/danger.jpg"},
+					{url:"./img/danger/danger-1.jpg"},
+					{url:"./img/danger/danger-2.gif"},
+					{url:"./img/danger/danger-3.gif"},
+					{url:"./img/danger/danger-4.jpg"},
+					{url:"./img/danger/danger-5.jpg"},
+					{url:"./img/danger/danger-6.jpg"},
+					{url:"./img/danger/danger-7.jpg"},
+					{url:"./img/danger/danger-8.jpg"},
+					{url:"./img/danger/danger-9.gif"},
+				],
+				dangerTimer:{},
+				dangerTime:3,
+			},
+			methods:{
+				fuckSubmit(){
+					let self=this;
+					this.angryStatus=true;
+					self.dangerTimer=setInterval(function(){
+						self.dangerTime-=1
+						if(self.dangerTime==0){
+							var index = Math.floor((Math.random()*self.dangerList.length));
+							self.curFuckUrl=self.dangerList[index].url;
+							self.dangerTime=3
+						}
+					},500)
+				},
+				sorry(){
+					let self=this;
+					clearInterval(self.dangerTimer);
+					this.angryStatus=false;
+				},
+				changeType(){
+					var index = Math.floor((Math.random()*this.zuosiList.length)); 
+					this.curZuosiType=this.zuosiList[index];
+					document.body.style.backgroundColor=this.curZuosiType.bg;
+				}
+			}
+		})
+	</script>
+	<script>
+	</script>
+</body>
+</html>
