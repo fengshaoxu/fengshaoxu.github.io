@@ -37,29 +37,19 @@
 <body>
   <div class="clock">
     <p style="padding-top:100px;"><span id="clock"></span></p>
-    <div style="padding-left:210px;"><img src="./img/w2.jpeg"/></div>
+    <div style="padding-left:210px;"><img id="week" src="./img/w2.jpeg"/></div>
   </div>
 </body>
 <script>
-  
-      function update() {
-        var date = new Date();
-        var utc8DiffMinutes = date.getTimezoneOffset() + 480;
-        date.setMinutes(date.getMinutes() + utc8DiffMinutes);
-
-        var timeString = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2);
-        var dateString = (date.getMonth() + 1) + '月' + date.getDate() + '日';
-        var weekList = ['日', '一', '二', '三', '四', '五', '六'];
-        // var weekJpList = [' 日曜日', ' 月曜日', ' 火曜日', ' 水曜日', ' 木曜日', ' 金曜日', ' 土曜日'];
-        var weekString = '星期' + weekList[date.getDay()];
-
-        document.getElementById("clock").innerHTML = timeString
-        //document.getElementById("date").innerHTML = dateString
-        //document.getElementById("week").innerHTML = weekString
-      }
-
-      update()
-      setInterval("update()", 60 * 1000)
-    
+  function update() {
+    var date = new Date();
+    var utc8DiffMinutes = date.getTimezoneOffset() + 480;
+    date.setMinutes(date.getMinutes() + utc8DiffMinutes);
+    var time = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2);
+    document.getElementById("clock").innerHTML = time
+    document.getElementById("week").src = "./img/w"+ date.getDay() +".jpeg"
+  }
+  update()
+  setInterval("update()", 60 * 1000)
 </script>
 </html>
