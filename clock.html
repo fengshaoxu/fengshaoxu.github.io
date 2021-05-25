@@ -46,8 +46,13 @@
     var utc8DiffMinutes = date.getTimezoneOffset() + 480;
     date.setMinutes(date.getMinutes() + utc8DiffMinutes);
     var time = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2);
-    document.getElementById("clock").innerHTML = time
-    document.getElementById("week").src = "./img/w"+ date.getDay() +".jpeg"
+    document.getElementById("clock").innerHTML = time;
+    if(time=='10:08'){
+       document.getElementById("week").src = "./img/tea.jpg"
+    }else{
+       document.getElementById("week").src = "./img/w"+ date.getDay() +".jpeg"
+    }
+    
   }
   update()
   setInterval("update()", 60 * 1000)
