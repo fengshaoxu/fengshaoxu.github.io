@@ -47,7 +47,7 @@
     date.setMinutes(date.getMinutes() + utc8DiffMinutes);
     var time = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2);
     document.getElementById("clock").innerHTML = time;
-    if(time=='10:10'){
+    if(time=='10:13'){
        document.getElementById("week").src = "./img/tea.jpg"
     }else{
        document.getElementById("week").src = "./img/w"+ date.getDay() +".jpeg"
